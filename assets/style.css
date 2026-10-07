@@ -2,20 +2,20 @@
    Thimdrine — feuille de style
    =================================== */
 
-/* Couleurs et polices de la charte */
+/* Brand colors and fonts */
 :root {
-  --couleur-thym: #3E5C35;
-  --couleur-thym-fonce: #2C4326;
-  --couleur-miel: #E0A526;
-  --couleur-figue: #8A2846;
-  --couleur-lin: #FBF6EC;
-  --couleur-sable: #F3EAD7;
-  --couleur-terre: #2B2118;
-  --couleur-terre-douce: #5C4F42;
-  --couleur-blanc: #FFFFFF;
+  --thyme-color: #3E5C35;
+  --dark-thyme-color: #2C4326;
+  --honey-color: #E0A526;
+  --fig-color: #8A2846;
+  --linen-color: #FBF6EC;
+  --sand-color: #F3EAD7;
+  --earth-color: #2B2118;
+  --soft-earth-color: #5C4F42;
+  --white-color: #FFFFFF;
 
-  --police-titre: 'Lora', Georgia, serif;
-  --police-texte: 'Source Sans 3', Arial, sans-serif;
+  --heading-font: 'Lora', Georgia, serif;
+  --body-font: 'Source Sans 3', Arial, sans-serif;
 }
 
 
@@ -27,20 +27,20 @@
 
 body {
   margin: 0;
-  font-family: var(--police-texte);
+  font-family: var(--body-font);
   font-size: 17px;
   line-height: 1.6;
-  color: var(--couleur-terre);
-  background-color: var(--couleur-lin);
+  color: var(--earth-color);
+  background-color: var(--linen-color);
 }
 
 h1,
 h2,
 h3 {
   margin: 0 0 16px;
-  font-family: var(--police-titre);
+  font-family: var(--heading-font);
   line-height: 1.2;
-  color: var(--couleur-thym-fonce);
+  color: var(--dark-thyme-color);
 }
 
 h1 {
@@ -61,7 +61,7 @@ p {
 }
 
 a {
-  color: var(--couleur-thym);
+  color: var(--thyme-color);
 }
 
 img {
@@ -70,7 +70,7 @@ img {
   height: auto;
 }
 
-.conteneur {
+.container {
   max-width: 1152px;
   margin: 0 auto;
   padding-left: 16px;
@@ -81,13 +81,13 @@ img {
   padding: 64px 0;
 }
 
-.section-sable {
-  background-color: var(--couleur-sable);
+.section-sand {
+  background-color: var(--sand-color);
 }
 
 .intro {
   margin-bottom: 40px;
-  color: var(--couleur-terre-douce);
+  color: var(--soft-earth-color);
 }
 
 .lien {
@@ -97,14 +97,14 @@ img {
 }
 
 
-/* ----- En-tête ----- */
+/* ----- Header ----- */
 
-.entete {
-  background-color: var(--couleur-blanc);
-  border-bottom: 1px solid var(--couleur-sable);
+.header {
+  background-color: var(--white-color);
+  border-bottom: 1px solid var(--sand-color);
 }
 
-.entete-contenu {
+.header-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -118,10 +118,10 @@ img {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--police-titre);
+  font-family: var(--heading-font);
   font-size: 20px;
   font-weight: 700;
-  color: var(--couleur-thym-fonce);
+  color: var(--dark-thyme-color);
   text-decoration: none;
 }
 
@@ -129,90 +129,90 @@ img {
   width: 44px;
 }
 
-.menu {
+.nav-menu {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
 }
 
-.menu a {
+.nav-menu a {
   padding: 8px;
   border-radius: 30px;
   font-size: 15px;
   font-weight: 600;
-  color: var(--couleur-terre);
+  color: var(--earth-color);
   text-decoration: none;
 }
 
-.menu a:hover {
-  background-color: var(--couleur-sable);
+.nav-menu a:hover {
+  background-color: var(--sand-color);
 }
 
 /* Le lien de la page où l'on se trouve */
-.menu a.actif {
-  background-color: var(--couleur-thym);
-  color: var(--couleur-blanc);
+.nav-menu a.active {
+  background-color: var(--thyme-color);
+  color: var(--white-color);
 }
 
 
 /* ----- Boutons ----- */
 
-.bouton {
+.button {
   display: inline-block;
   padding: 12px 24px;
-  border: 2px solid var(--couleur-thym);
+  border: 2px solid var(--thyme-color);
   border-radius: 30px;
-  background-color: var(--couleur-thym);
-  color: var(--couleur-blanc);
+  background-color: var(--thyme-color);
+  color: var(--white-color);
   font-weight: 600;
   text-decoration: none;
 }
 
-.bouton:hover {
-  background-color: var(--couleur-thym-fonce);
+.button:hover {
+  background-color: var(--dark-thyme-color);
 }
 
-.bouton-contour {
+.button-outline {
   background-color: transparent;
-  color: var(--couleur-thym);
+  color: var(--thyme-color);
 }
 
-.bouton-contour:hover {
-  background-color: var(--couleur-sable);
+.button-outline:hover {
+  background-color: var(--sand-color);
 }
 
-.bouton-miel {
-  border-color: var(--couleur-miel);
-  background-color: var(--couleur-miel);
-  color: var(--couleur-terre);
+.button-honey {
+  border-color: var(--honey-color);
+  background-color: var(--honey-color);
+  color: var(--earth-color);
 }
 
-.bouton-miel:hover {
-  background-color: var(--couleur-lin);
+.button-honey:hover {
+  background-color: var(--linen-color);
 }
 
 
-/* ----- Bandeau d'accroche ----- */
+/* ----- Hero banner ----- */
 
 .hero {
   padding: 40px 0;
-  background-color: var(--couleur-blanc);
+  background-color: var(--white-color);
 }
 
-.surtitre {
+.eyebrow {
   margin-bottom: 8px;
   font-weight: 600;
   text-transform: uppercase;
-  color: var(--couleur-figue);
+  color: var(--fig-color);
 }
 
-.accroche {
+.tagline {
   margin-bottom: 24px;
   font-size: 20px;
-  color: var(--couleur-terre-douce);
+  color: var(--soft-earth-color);
 }
 
-.boutons {
+.buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -223,16 +223,16 @@ img {
 }
 
 
-/* ----- Présentation ----- */
+/* ----- About section ----- */
 
 .presentation {
   max-width: 768px;
 }
 
 
-/* ----- Cartes produits ----- */
+/* ----- Product cards ----- */
 
-.cartes {
+.product-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -240,112 +240,112 @@ img {
   margin-bottom: 16px;
 }
 
-.carte {
+.product-card {
   flex: 1;
   min-width: 260px;
   max-width: 400px;
   overflow: hidden;
   border-radius: 12px;
-  background-color: var(--couleur-blanc);
+  background-color: var(--white-color);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
-.carte img {
+.product-card img {
   width: 100%;
 }
 
-.carte-texte {
+.card-text {
   padding: 24px;
 }
 
-.prix {
+.price {
   margin: 0;
   font-size: 20px;
   font-weight: 700;
-  color: var(--couleur-figue);
+  color: var(--fig-color);
 }
 
-.prix span {
+.price span {
   font-size: 15px;
   font-weight: 400;
-  color: var(--couleur-terre-douce);
+  color: var(--soft-earth-color);
 }
 
 
-/* ----- Appel à l'action ----- */
+/* ----- Call to action ----- */
 
-.appel {
+.cta {
   padding: 64px 0;
-  background-color: var(--couleur-thym);
-  color: var(--couleur-blanc);
+  background-color: var(--thyme-color);
+  color: var(--white-color);
   text-align: center;
 }
 
-.appel h2 {
-  color: var(--couleur-blanc);
+.cta h2 {
+  color: var(--white-color);
 }
 
-.appel p {
+.cta p {
   max-width: 576px;
   margin: 0 auto 24px;
 }
 
 
-/* ----- Pied de page ----- */
+/* ----- Footer ----- */
 
-.pied {
+.footer {
   padding-top: 40px;
-  background-color: var(--couleur-thym-fonce);
-  color: var(--couleur-lin);
+  background-color: var(--dark-thyme-color);
+  color: var(--linen-color);
 }
 
-.pied-colonnes {
+.footer-columns {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
 }
 
-.pied-colonnes div {
+.footer-columns div {
   flex: 1;
   min-width: 220px;
 }
 
-.pied h2 {
+.footer h2 {
   margin-bottom: 8px;
   font-size: 20px;
-  color: var(--couleur-miel);
+  color: var(--honey-color);
 }
 
-.pied a {
-  color: var(--couleur-lin);
+.footer a {
+  color: var(--linen-color);
 }
 
-.pied-colonnes p,
-.pied address {
+.footer-columns p,
+.footer address {
   margin: 0;
   font-style: normal;
 }
 
-.pied ul {
+.footer ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.pied li {
+.footer li {
   margin-bottom: 4px;
 }
 
 .copyright {
   margin: 40px 0 0;
   padding: 16px;
-  border-top: 1px solid var(--couleur-thym);
+  border-top: 1px solid var(--thyme-color);
   font-size: 15px;
   text-align: center;
 }
 
 
-/* ----- Ordinateur : à partir de 1024 px de large ----- */
+/* ----- Desktop: from 1024px wide ----- */
 
 @media (min-width: 1024px) {
   h1 {
@@ -356,12 +356,12 @@ img {
     font-size: 32px;
   }
 
-  .conteneur {
+  .container {
     padding-left: 24px;
     padding-right: 24px;
   }
 
-  .menu a {
+  .nav-menu a {
     padding: 8px 12px;
     font-size: 17px;
   }
@@ -370,13 +370,13 @@ img {
     padding: 64px 0;
   }
 
-  .hero-contenu {
+  .hero-content {
     display: flex;
     align-items: center;
     gap: 40px;
   }
 
-  .hero-texte,
+  .hero-text,
   .hero-image {
     flex: 1;
   }
