@@ -1,25 +1,33 @@
-/* ===================================
-   Thimdrine — feuille de style
-   =================================== */
+/* Thimdrine stylesheet */
 
-/* Brand colors and fonts */
+
+/* GLOBAL */
+
+/* colours + fonts, change them here and it updates everywhere */
 :root {
-  --thyme-color: #3E5C35;
-  --dark-thyme-color: #2C4326;
-  --honey-color: #E0A526;
-  --fig-color: #8A2846;
-  --linen-color: #FBF6EC;
-  --sand-color: #F3EAD7;
-  --earth-color: #2B2118;
-  --soft-earth-color: #5C4F42;
+
+  /* main brand colours */
+  --rif-color: #264653;
+  --honey-color: #D99A2B;
+  --fig-color: #7A2946;
+  --clay-color: #B85C38;
+
+  /* backgrounds */
+  --linen-color: #F7F0E3;
+  --sand-color: #E8D8BF;
   --white-color: #FFFFFF;
 
+  /* text */
+  --earth-color: #241E1A;
+  --earth-soft-color: #5A4F46;
+
+  /* fonts */
   --heading-font: 'Lora', Georgia, serif;
   --body-font: 'Source Sans 3', Arial, sans-serif;
 }
 
 
-/* ----- Base ----- */
+/* basic reset + defaults */
 
 * {
   box-sizing: border-box;
@@ -40,7 +48,7 @@ h3 {
   margin: 0 0 16px;
   font-family: var(--heading-font);
   line-height: 1.2;
-  color: var(--dark-thyme-color);
+  color: var(--rif-color);
 }
 
 h1 {
@@ -61,7 +69,7 @@ p {
 }
 
 a {
-  color: var(--thyme-color);
+  color: var(--rif-color);
 }
 
 img {
@@ -70,6 +78,8 @@ img {
   height: auto;
 }
 
+
+/* keeps the content centered */
 .container {
   max-width: 1152px;
   margin: 0 auto;
@@ -77,30 +87,11 @@ img {
   padding-right: 16px;
 }
 
-.section {
-  padding: 64px 0;
-}
 
-.section-sand {
-  background-color: var(--sand-color);
-}
-
-.intro {
-  margin-bottom: 40px;
-  color: var(--soft-earth-color);
-}
-
-.lien {
-  display: inline-block;
-  margin-top: 8px;
-  font-weight: 600;
-}
-
-
-/* ----- Header ----- */
+/* HEADER */
 
 .header {
-  background-color: var(--white-color);
+  background-color: var(--rif-color);
   border-bottom: 1px solid var(--sand-color);
 }
 
@@ -121,7 +112,7 @@ img {
   font-family: var(--heading-font);
   font-size: 20px;
   font-weight: 700;
-  color: var(--dark-thyme-color);
+  color: var(--linen-color);
   text-decoration: none;
 }
 
@@ -136,80 +127,79 @@ img {
 }
 
 .nav-menu a {
-  padding: 8px;
+  padding: 8px 12px;
   border-radius: 30px;
   font-size: 15px;
   font-weight: 600;
-  color: var(--earth-color);
+  color: var(--linen-color);
   text-decoration: none;
 }
 
 .nav-menu a:hover {
-  background-color: var(--sand-color);
+  background-color: rgba(247, 240, 227, 0.12);
 }
 
-/* Le lien de la page où l'on se trouve */
+/* highlights the page you're currently on */
 .nav-menu a.active {
-  background-color: var(--thyme-color);
-  color: var(--white-color);
-}
-
-
-/* ----- Boutons ----- */
-
-.button {
-  display: inline-block;
-  padding: 12px 24px;
-  border: 2px solid var(--thyme-color);
-  border-radius: 30px;
-  background-color: var(--thyme-color);
-  color: var(--white-color);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.button:hover {
-  background-color: var(--dark-thyme-color);
-}
-
-.button-outline {
-  background-color: transparent;
-  color: var(--thyme-color);
-}
-
-.button-outline:hover {
-  background-color: var(--sand-color);
-}
-
-.button-honey {
-  border-color: var(--honey-color);
   background-color: var(--honey-color);
   color: var(--earth-color);
 }
 
-.button-honey:hover {
-  background-color: var(--linen-color);
-}
 
+/* HOME PAGE */
 
-/* ----- Hero banner ----- */
-
+/* hero banner at the top */
 .hero {
-  padding: 40px 0;
-  background-color: var(--white-color);
+  position: relative;
+  min-height: 700px;
+  padding: 80px 0;
+  background-image: url("../images/cover.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--rif-color);
 }
 
+/* dark layer on top of the photo so the text is readable */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(36, 30, 26, 0.50);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+/* small uppercase line above the titles */
 .eyebrow {
   margin-bottom: 8px;
+  font-size: 14px;
   font-weight: 600;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--fig-color);
+  color: var(--clay-color);
+}
+
+.hero .eyebrow {
+  color: var(--honey-color);
+}
+
+.hero h1 {
+  font-size: 52px;
+  color: var(--linen-color);
 }
 
 .tagline {
   margin-bottom: 24px;
   font-size: 20px;
-  color: var(--soft-earth-color);
+  color: var(--linen-color);
 }
 
 .buttons {
@@ -218,19 +208,76 @@ img {
   gap: 16px;
 }
 
-.hero-image {
-  margin-top: 40px;
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 2px solid var(--rif-color);
+  border-radius: 30px;
+  background-color: var(--rif-color);
+  color: var(--linen-color);
+  font-family: var(--body-font);
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--earth-color);
+  border-color: var(--earth-color);
+}
+
+/* second button style, just an outline */
+.button-outline {
+  background-color: transparent;
+  color: var(--rif-color);
+}
+
+.button-outline:hover {
+  background-color: var(--sand-color);
+  color: var(--earth-color);
+}
+
+/* on the hero the outline button needs to be light so it shows up on the photo */
+.hero .button-outline {
+  border-color: var(--linen-color);
+  background-color: transparent;
+  color: var(--linen-color);
+}
+
+.hero .button-outline:hover {
+  background-color: var(--linen-color);
+  color: var(--earth-color);
 }
 
 
-/* ----- About section ----- */
+/* "who are we" section */
+
+.section {
+  padding: 64px 0;
+}
 
 .presentation {
   max-width: 768px;
 }
 
+.link {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 600;
+}
 
-/* ----- Product cards ----- */
+
+/* signature products */
+
+.section-sand {
+  background-color: var(--sand-color);
+}
+
+.intro {
+  margin-bottom: 40px;
+  color: var(--earth-soft-color);
+}
 
 .product-cards {
   display: flex;
@@ -240,18 +287,20 @@ img {
   margin-bottom: 16px;
 }
 
+/* three cards per row on desktop, the 48px is the two gaps */
 .product-card {
-  flex: 1;
+  flex: 1 1 calc((100% - 48px) / 3);
   min-width: 260px;
-  max-width: 400px;
   overflow: hidden;
   border-radius: 12px;
-  background-color: var(--white-color);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  background-color: var(--linen-color);
+  box-shadow: 0 4px 16px rgba(36, 30, 26, 0.12);
 }
 
 .product-card img {
   width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 
 .card-text {
@@ -262,27 +311,27 @@ img {
   margin: 0;
   font-size: 20px;
   font-weight: 700;
-  color: var(--fig-color);
+  color: var(--clay-color);
 }
 
 .price span {
   font-size: 15px;
   font-weight: 400;
-  color: var(--soft-earth-color);
+  color: var(--earth-soft-color);
 }
 
 
-/* ----- Call to action ----- */
+/* call to action banner */
 
 .cta {
   padding: 64px 0;
-  background-color: var(--thyme-color);
-  color: var(--white-color);
+  background-color: var(--rif-color);
+  color: var(--linen-color);
   text-align: center;
 }
 
 .cta h2 {
-  color: var(--white-color);
+  color: var(--linen-color);
 }
 
 .cta p {
@@ -290,12 +339,198 @@ img {
   margin: 0 auto 24px;
 }
 
+.button-honey {
+  border-color: var(--honey-color);
+  background-color: var(--honey-color);
+  color: var(--earth-color);
+}
 
-/* ----- Footer ----- */
+.button-honey:hover {
+  background-color: var(--linen-color);
+  border-color: var(--linen-color);
+}
+
+
+/* PRODUCTS PAGE */
+
+.page-intro {
+  padding: 48px 0 24px;
+}
+
+.page-intro h1 {
+  font-size: 40px;
+}
+
+.page-intro p:last-child {
+  max-width: 640px;
+  margin-bottom: 0;
+  color: var(--earth-soft-color);
+}
+
+.products-section {
+  padding: 24px 0 64px;
+}
+
+
+/* testimonials */
+
+.testimonials {
+  padding: 56px 0;
+  background-color: var(--sand-color);
+}
+
+.testimonials-header {
+  margin-bottom: 24px;
+}
+
+.testimonials-header h2 {
+  margin-bottom: 8px;
+}
+
+.testimonials-header p {
+  margin: 0;
+  color: var(--earth-soft-color);
+}
+
+.testimonial-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.testimonial-card {
+  position: relative;
+  flex: 1 1 220px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: var(--white-color);
+  box-shadow: 0 2px 8px rgba(36, 30, 26, 0.08);
+}
+
+.testimonial-person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* round photo sticking out of the top corner of the card */
+.avatar {
+  position: absolute;
+  right: -11px;
+  top: -34px;
+  width: 68px;
+  height: 68px;
+  border: 5px solid var(--sand-color);
+  border-radius: 50%;
+  background-color: var(--sand-color);
+}
+
+.testimonial-person h3 {
+  margin: 0;
+  font-family: var(--body-font);
+  font-size: 16px;
+  color: var(--earth-color);
+}
+
+.testimonial-person p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--earth-soft-color);
+}
+
+.stars {
+  margin: 0 0 8px;
+  letter-spacing: 2px;
+  color: var(--honey-color);
+}
+
+.testimonial-card .review {
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: var(--earth-soft-color);
+}
+
+
+/* ABOUT PAGE */
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* the vertical line running down the middle */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+  background-color: var(--clay-color);
+  z-index: 0;
+}
+
+/* each row = image on one side, text on the other */
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+  z-index: 1;
+}
+
+.timeline-card,
+.timeline-text {
+  width: 100%;
+  position: relative;
+  border-radius: 16px;
+}
+
+.timeline-card img {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+}
+
+.timeline-text {
+  background-color: var(--white-color);
+  padding: 30px;
+  width: 100%;
+  height: 298.27px;
+  position: relative;
+  border-radius: 16px;
+}
+
+/* the little circles on the line. odd rows have text on the left,
+   even rows have the image on the left, so the dot goes on whichever one that is */
+.timeline-item:nth-child(1) .timeline-text::before,
+.timeline-item:nth-child(3) .timeline-text::before,
+.timeline-item:nth-child(2) .timeline-card::before,
+.timeline-item:nth-child(4) .timeline-card::before {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 3px solid var(--clay-color);
+  left: -44px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--linen-color);
+  z-index: 2;
+}
+
+
+/* FOOTER */
 
 .footer {
   padding-top: 40px;
-  background-color: var(--dark-thyme-color);
+  background-color: var(--earth-color);
   color: var(--linen-color);
 }
 
@@ -305,9 +540,8 @@ img {
   gap: 40px;
 }
 
-.footer-columns div {
-  flex: 1;
-  min-width: 220px;
+.footer-columns>div {
+  flex: 1 1 220px;
 }
 
 .footer h2 {
@@ -339,49 +573,45 @@ img {
 .copyright {
   margin: 40px 0 0;
   padding: 16px;
-  border-top: 1px solid var(--thyme-color);
+  border-top: 1px solid var(--rif-color);
   font-size: 15px;
   text-align: center;
 }
 
 
-/* ----- Desktop: from 1024px wide ----- */
+/* MOBILE */
 
-@media (min-width: 1024px) {
+@media (max-width: 767px) {
+
   h1 {
-    font-size: 52px;
+    font-size: 30px;
   }
 
   h2 {
-    font-size: 32px;
+    font-size: 24px;
   }
 
-  .container {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  .nav-menu a {
-    padding: 8px 12px;
-    font-size: 17px;
-  }
-
+  /* home */
   .hero {
-    padding: 64px 0;
+    min-height: 0;
+    padding: 56px 0;
   }
 
-  .hero-content {
-    display: flex;
-    align-items: center;
-    gap: 40px;
+  .hero h1 {
+    font-size: 36px;
   }
 
-  .hero-text,
-  .hero-image {
-    flex: 1;
+  .tagline {
+    font-size: 18px;
   }
 
-  .hero-image {
-    margin-top: 0;
+  .section,
+  .cta {
+    padding: 48px 0;
+  }
+
+  /* products */
+  .page-intro h1 {
+    font-size: 30px;
   }
 }
