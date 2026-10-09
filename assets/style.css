@@ -579,6 +579,131 @@ img {
   background-color: var(--honey-color);
 }
 
+@media (max-width: 768px) {
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Header */
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+  }
+
+  /* About intro */
+  .about-intro h1 {
+    font-size: 2rem;
+  }
+
+  /* Timeline */
+  .timeline {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .timeline::before,
+  .timeline::after,
+  .timeline-item::before,
+  .timeline-item::after {
+    display: none;
+  }
+
+  .timeline-card {
+    display: none;
+  }
+
+  .timeline-item {
+    display: block;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0 0 24px 0;
+    padding: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+  }
+
+  .timeline-text {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 24px 20px;
+    left: 0;
+    right: 0;
+    transform: none;
+    order: 0;
+  }
+
+  /* Newsletter */
+  .newsletter {
+    display: block;
+    padding: 40px 20px;
+  }
+
+  .newsletter .content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .newsletter .intro br {
+    display: none;
+  }
+
+  .newsletter .form-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .newsletter input,
+  .newsletter button {
+    width: 100%;
+  }
+
+  .newsletter > img {
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  /* Footer */
+  .footer-columns {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
 /* Contact Page */
 
 .contact-section {
@@ -713,7 +838,6 @@ img {
    so the other pages are left untouched */
 
 @media (max-width: 767px) {
-
   body:has(.hero) {
     font-size: 16px;
   }
@@ -723,7 +847,8 @@ img {
   }
 
   /* header: logo on top, menu underneath */
-  body:has(.hero) .header-content {
+ .header-content {
+  display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
@@ -731,20 +856,21 @@ img {
     padding-bottom: 12px;
   }
 
-  body:has(.hero) .logo {
+ .logo {
     font-size: 18px;
   }
 
-  body:has(.hero) .logo img {
+  .logo img {
     width: 36px;
   }
 
-  body:has(.hero) .nav-menu {
+  .nav-menu {
     gap: 2px;
     margin-left: -8px;
+    justify-content: center;
   }
 
-  body:has(.hero) .nav-menu a {
+ .nav-menu a {
     padding: 6px 10px;
     font-size: 13px;
   }
@@ -804,26 +930,31 @@ img {
   }
 
   /* footer: columns stacked */
-  body:has(.hero) .footer {
+ .footer {
     padding-top: 32px;
   }
-
-  body:has(.hero) .footer-columns {
+.footer-columns {
     flex-direction: column;
     gap: 24px;
   }
 
-  /* flex: 1 1 220px would make each column 220px tall once they are stacked */
-  body:has(.hero) .footer-columns > div {
+.footer-columns > div {
     flex: none;
   }
 
-  body:has(.hero) .footer h2 {
+  .footer h2 {
     font-size: 18px;
   }
 
-  body:has(.hero) .copyright {
+  .copyright {
     margin-top: 28px;
     font-size: 13px;
   }
+}
+
+@media (max-width: 768px) {
+    .newsletter input, .newsletter button {
+        width: 100%;
+        margin: 5px auto;
+    }
 }
