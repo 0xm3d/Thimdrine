@@ -790,11 +790,11 @@ img {
   }
 
   /* product cards: one per row */
-  body:has(.hero) .product-cards {
+  .product-cards {
     gap: 20px;
   }
 
-  body:has(.hero) .product-card {
+ .product-card {
     flex: 1 1 100%;
     min-width: 0;
   }
@@ -811,6 +811,15 @@ img {
   body:has(.hero) .footer-columns {
     flex-direction: column;
     gap: 24px;
+  }
+
+  /* flex: 1 1 220px would make each column 220px tall once they are stacked */
+  body:has(.hero) .footer-columns > div {
+    flex: none;
+  }
+
+  body:has(.hero) .footer h2 {
+    font-size: 18px;
   }
 
   body:has(.hero) .copyright {
