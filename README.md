@@ -64,13 +64,6 @@ The style guide was made in Figma and is declared as CSS variables in `:root`.
 
 **Spacing scale:** 8px, 16px, 24px, 40px, 64px.
 
-## User stories
-
-- As a visitor, I want to navigate between the pages from any page.
-- As a visitor, I want to see the products with their prices so I can choose.
-- As a customer, I want to send an order request without typing errors.
-- As a visitor on mobile, I want to read the site without zooming.
-
 ## Technical constraints
 
 - HTML5 and CSS3 only: no framework, no JavaScript, no copied template
