@@ -469,6 +469,11 @@ img {
   border: 5px solid var(--sand-color);
   border-radius: 50%;
   background-color: var(--sand-color);
+  transition: 1s;
+}
+
+.testimonial-card:hover .avatar {
+  transform: rotate(360deg);
 }
 
 .testimonial-person h3 {
@@ -752,6 +757,12 @@ img {
 
 .contact-section {
   padding: 24px 0 64px;
+}
+
+.contact-section .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
  
 .order-form {
