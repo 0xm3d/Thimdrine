@@ -262,7 +262,7 @@ img {
 }
 
 .link {
-  display: inline-block;
+  display: flex;
   margin-top: 8px;
   font-weight: 600;
 }
@@ -294,13 +294,24 @@ img {
   overflow: hidden;
   border-radius: 12px;
   background-color: var(--linen-color);
-  box-shadow: 0 4px 16px rgba(36, 30, 26, 0.12);
+  box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+    box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
 }
 
 .product-card img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.1);
 }
 
 .card-text {
