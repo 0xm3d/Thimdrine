@@ -316,19 +316,48 @@ img {
 
 .card-text {
   padding: 24px;
+  display: flex;
+  flex-direction: column;
 }
 
+
 .price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
   margin: 0;
+}
+
+.price p {
+  margin: 0;
+}
+
+.price-value {
   font-size: 20px;
   font-weight: 700;
   color: var(--clay-color);
 }
 
-.price span {
-  font-size: 15px;
+.price-weight {
+  font-size: 14px;
   font-weight: 400;
-  color: var(--earth-soft-color);
+  color: var(--honey-color);
+}
+
+.card-text .add  {
+  text-decoration: none;
+  width: 100px;
+  padding: 2px 5px;
+  margin: 0 auto;
+  background-color: var(--honey-color);
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.card-text .add:hover {
+  background-color: var(--clay-color);
 }
 
 
