@@ -681,8 +681,8 @@ img {
 
   .timeline::before,
   .timeline::after,
-  .timeline-item::before,
-  .timeline-item::after {
+  .timeline-text::before,
+  .timeline-text::before {
     display: none;
   }
 
